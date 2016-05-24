@@ -6,4 +6,12 @@
     <string name="get_location">Get Location</string>
     <string name="disconnect">Disconnect Service</string>
     <string name="connect">Connect Service</string>
+    <string name="name">name</string>
+    <string name="date">date</string>
+    <string name="tipPercentPrompt">Tip %:</string>
+    <string name="tipPrompt">Tip:</string>
+    <string name="total">Total Amount:</string>
+    <string name="calculate">Calculate</string>
+
+
 </resources>

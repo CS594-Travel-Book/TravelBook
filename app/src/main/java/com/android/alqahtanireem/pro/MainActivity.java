@@ -1,4 +1,5 @@
 package com.android.alqahtanireem.pro;
+import com.android.alqahtanireem.pro.R;
 
 import android.Manifest;
 import android.content.Context;
@@ -11,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import java.lang.Object;
+import java.util.Date;
 
 
 import android.os.Bundle;

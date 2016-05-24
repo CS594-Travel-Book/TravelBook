@@ -4,11 +4,196 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:text="New Text"
-        android:id="@+id/item_text"
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/colorAccent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_view_height"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Name:"
+                    android:textColor="@color/colorAccent"
+                    android:id="@+id/subtotalPrompt"
+                    android:textSize="23sp"
+                    android:layout_marginLeft="@dimen/text_view_margin"
+                    android:layout_marginTop="@dimen/text_view_margin"
+                    />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_view_height"
+                    android:inputType="text"
+                    android:ems="8"
+                    android:id="@+id/name"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/text_view_margin"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_view_height"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Category:"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="23sp"
+                    android:layout_marginLeft="@dimen/text_view_margin"
+                    android:layout_marginTop="@dimen/text_view_margin"
+                    />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    >
+                    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Restaurant"
+                            android:id="@+id/radioButton"
+                            android:textColor="@color/colorAccent"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Shopping mall"
+                            android:id="@+id/radioButton1"
+                            android:textColor="@color/colorAccent"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="business"
+                            android:id="@+id/radioButton2"
+                            android:textColor="@color/colorAccent"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Other"
+                            android:id="@+id/radioButton3"
+                            android:textColor="@color/colorAccent"
+                            />
+                    </RadioGroup>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Date:"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="23sp"
+                    android:layout_marginLeft="@dimen/text_view_margin"
+                    android:layout_marginTop="@dimen/text_view_margin"
+                    android:layout_weight="0.03" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/date"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorAccent"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Address:"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="23sp"
+                    android:layout_marginLeft="@dimen/text_view_margin"
+                    android:layout_marginTop="@dimen/text_view_margin"
+                    android:layout_weight="0.03" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/address_text"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorAccent"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Photos"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="23sp"
+                    android:layout_marginLeft="@dimen/text_view_margin"
+                    android:layout_marginTop="@dimen/text_view_margin"
+                    android:layout_weight="0.03" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                >
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:id="@+id/button"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/text_size"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
 </LinearLayout>

@@ -1,44 +1,55 @@
 package com.android.alqahtanireem.pro;
+import java.lang.Object;
+import java.util.Date;
+import com.android.alqahtanireem.pro.R;
+ import android.Manifest;
+        import android.content.Context;
+        import android.content.pm.PackageManager;
+        import android.location.Location;
+        import android.location.LocationManager;
+        import android.net.Uri;
+        import android.os.AsyncTask;
+        import android.os.Bundle;
+        import android.support.annotation.Nullable;
+        import android.support.v4.app.ActivityCompat;
+        import android.support.v4.app.Fragment;
+        import android.text.Editable;
+        import android.text.Selection;
+        import android.text.format.Time;
+        import android.util.Log;
+        import android.view.KeyEvent;
+        import android.view.LayoutInflater;
+        import android.view.Menu;
+        import android.view.MenuInflater;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.view.inputmethod.EditorInfo;
+        import android.widget.AdapterView;
+        import android.widget.ArrayAdapter;
+        import android.widget.EditText;
+        import android.widget.ListView;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import android.Manifest;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationManager;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.text.format.Time;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
+        import com.google.android.gms.location.LocationListener;
 
-import com.google.android.gms.location.LocationListener;
+        import org.json.JSONArray;
+        import org.json.JSONException;
+        import org.json.JSONObject;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
+        import java.io.BufferedReader;
+        import java.io.IOException;
+        import java.io.InputStream;
+        import java.io.InputStreamReader;
+        import java.net.HttpURLConnection;
+        import java.net.URL;
+        import java.text.DateFormat;
+        import java.text.FieldPosition;
+        import java.text.ParsePosition;
+        import java.text.SimpleDateFormat;
+        import java.util.ArrayList;
+        import java.util.Arrays;
 
 
 /**
@@ -46,6 +57,10 @@ import java.util.Arrays;
  */
 public class MainActivityFragment extends Fragment {
 
+
+
+
+     private TextView date;
 
     public static final String LOG_TAG = "ForecastFragment";
     ArrayAdapter adapter;
@@ -64,6 +79,8 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.main, menu);
+
+
     }
 
 
@@ -81,6 +98,9 @@ public class MainActivityFragment extends Fragment {
     }
 
 
+    private EditText place_name;
+
+    //private String a="";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -88,16 +108,15 @@ public class MainActivityFragment extends Fragment {
 
 
         ListView listView = (ListView) rootView.findViewById(R.id.listview);
-        adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item, R.id.item_text, new ArrayList<String>());
+        adapter = new ArrayAdapter<String>(getActivity(), R.layout.list_item, R.id.address_text, new ArrayList<String>());
         listView.setAdapter(adapter);
+        place_name = (EditText) rootView.findViewById(R.id.name);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                // When clicked, show a toast with the TextView text
-                Toast.makeText(getActivity(), adapter.getItem(position).toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
+
+       // date= (TextView) rootView.findViewById(R.id.date);
+       // String currentDateTimeString = DateFormat.getDateTimeInstance().format(new java.util.Date());
+       //date.setText(currentDateTimeString);
+
 
 
         return rootView;
@@ -254,7 +273,7 @@ public class MainActivityFragment extends Fragment {
             // These are the names of the JSON objects that need to be extracted.
             final String OWM_RESULT = "results";
             final String OWM_address = "formatted_address";
-            final String OWM_type = "types";
+           // final String OWM_type = "types";
 
             JSONObject forecastJson = new JSONObject(forecastJsonStr);
             JSONArray reviewArray = forecastJson.getJSONArray(OWM_RESULT);
@@ -276,11 +295,11 @@ public class MainActivityFragment extends Fragment {
                 JSONObject dayForecast = reviewArray.getJSONObject(i);
 
                 address = dayForecast.getString(OWM_address);
-                type = dayForecast.getString(OWM_type);
+              //  type = dayForecast.getString(OWM_type);
 
 
 
-                resultStrs[i] = address +"\n\n" + type ;
+                resultStrs[i] = address;
             }
 
 
@@ -298,6 +317,17 @@ public class MainActivityFragment extends Fragment {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
