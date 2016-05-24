@@ -1,6 +1,5 @@
 package com.android.alqahtanireem.pro;
 import com.android.alqahtanireem.pro.R;
-// new code
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
