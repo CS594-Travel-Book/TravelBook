@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TravelBook</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="image_ids">
+
+    </string-array>
+</resources>
